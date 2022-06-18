@@ -76,6 +76,7 @@ const Footer = () => {
             href="https://dribbble.com/shots/18047808-DIGITUX-Creative-Digital-Agency"
             className="hightlight"
             target="_blank"
+            rel="noopener noreferrer"
           >
             dribbble
           </a>{" "}
@@ -84,6 +85,7 @@ const Footer = () => {
             href="https://github.com/Sittisukintaruk"
             className="hightlight"
             target="_blank"
+            rel="noopener noreferrer"
           >
             Sitthisak
           </a>
