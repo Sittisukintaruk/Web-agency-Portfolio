@@ -30,29 +30,19 @@ const Nav = () => {
           </div>
           <ul className="menu__navigation">
             <li>
-              <Link href="/" rel="noopener noreferrer">
-                Home
-              </Link>
+              <Link to="/">Home</Link>
             </li>
             <li>
-              <Link href="/who" rel="noopener noreferrer">
-                Who are We ?
-              </Link>
+              <Link to="/who">Who are We ?</Link>
             </li>
             <li>
-              <Link href="/OurServices" rel="noopener noreferrer">
-                Our Services
-              </Link>
+              <Link to="/OurServices">Our Services</Link>
             </li>
             <li>
-              <Link href="/OurProjects" rel="noopener noreferrer">
-                Our Projects
-              </Link>
+              <Link to="/OurProjects">Our Projects</Link>
             </li>
             <li>
-              <Link href="/Contact" rel="noopener noreferrer">
-                Contact Us
-              </Link>
+              <a href="/Contact">Contact Us</a>
             </li>
             <li>
               <a
