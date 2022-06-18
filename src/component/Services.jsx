@@ -1,6 +1,5 @@
 import React, { useRef } from "react";
 import Slider from "react-slick";
-import "react-multi-carousel/lib/styles.css";
 import { ReactComponent as Arrowleft } from "../images/Home/icon-svg/feather_arrow-left.svg";
 import { ReactComponent as Arrowright } from "../images/Home/icon-svg/feather_arrow-right.svg";
 
