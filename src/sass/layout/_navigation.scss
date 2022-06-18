@@ -9,19 +9,14 @@ nav {
   border-bottom: 1px solid #e2e2e2;
   padding-bottom: 6px;
   .menu__card {
+    visibility: visible;
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
     position: fixed;
     z-index: 9999;
-    opacity: 1;
     background-color: #fff;
-    animation-name: fade-in;
-    animation-delay: 0.25ms;
-    animation-timing-function: ease-in-out;
-    animation-iteration-count: 1;
-    animation-duration: 400ms;
 
     .menu__navigation {
       position: absolute;
@@ -49,7 +44,6 @@ nav {
           background-color: $blue-primary;
           z-index: 99;
           border-radius: 3px;
-         
         }
       }
     }
@@ -89,6 +83,24 @@ nav {
       display: grid;
       place-items: center;
       cursor: pointer;
+    }
+
+    &.show {
+      opacity: 1;
+      visibility: visible;
+      animation-name: fade-in;
+      animation-delay: 0.25ms;
+      animation-timing-function: ease-in-out;
+      animation-iteration-count: 1;
+      animation-duration: 400ms;
+    }
+    &.hiden {
+      opacity: 0;
+      animation-name: fade-out;
+      animation-timing-function: ease-out;
+      animation-iteration-count: 1;
+      animation-duration: 600ms;
+      transform: translateY(-1037px);
     }
   }
 }

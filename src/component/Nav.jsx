@@ -4,11 +4,11 @@ import { Link, NavLink } from "react-router-dom";
 
 const Nav = () => {
   const [toggle, setToggle] = useState(false);
-
+  const [close, setclose] = useState(true);
   return (
     <nav>
       {toggle && (
-        <div className="menu__card">
+        <div className={`menu__card ` + (close ? `show` : "hiden")}>
           <div
             className="close"
             onClick={() => {
@@ -30,19 +30,54 @@ const Nav = () => {
           </div>
           <ul className="menu__navigation">
             <li>
-              <Link to="/">Home</Link>
+              <Link
+                to="/"
+                onClick={() => {
+                  setclose(false);
+                }}
+              >
+                Home
+              </Link>
             </li>
             <li>
-              <Link to="/who">Who are We ?</Link>
+              <Link
+                to="/who"
+                onClick={() => {
+                  setclose(false);
+                }}
+              >
+                Who are We ?
+              </Link>
             </li>
             <li>
-              <Link to="/OurServices">Our Services</Link>
+              <Link
+                to="/OurServices"
+                onClick={() => {
+                  setclose(false);
+                }}
+              >
+                Our Services
+              </Link>
             </li>
             <li>
-              <Link to="/OurProjects">Our Projects</Link>
+              <Link
+                to="/OurProjects"
+                onClick={() => {
+                  setclose(false);
+                }}
+              >
+                Our Projects
+              </Link>
             </li>
             <li>
-              <Link to="/Contact">Contact Us</Link>
+              <Link
+                to="/Contact"
+                onClick={() => {
+                  setclose(false);
+                }}
+              >
+                Contact Us
+              </Link>
             </li>
             <li>
               <a
@@ -91,7 +126,8 @@ const Nav = () => {
           <Hamberger
             className={`hamberger__menu`}
             onClick={() => {
-              setToggle(!toggle);
+              setToggle(true);
+              setclose(true);
             }}
           />
         </div>
