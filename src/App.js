@@ -1,24 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Nav from "./component/Nav";
+import Footer from "./component/Footer";
+import Main from "./component/Main";
+import CustomArrowExample from "./component/CustomArrowExample";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import "./sass/main.css";
+import NotFound from "./component/NotFound";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Nav />
+      <Main />
+      <Footer />
+      <CustomArrowExample />
+    </Router>
   );
 }
 

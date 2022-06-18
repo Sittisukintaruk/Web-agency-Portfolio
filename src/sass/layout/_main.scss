@@ -1,0 +1,14 @@
+@use "../abstracts/" as *;
+
+main {
+  margin-top: 110px;
+  margin-bottom: 180px;
+
+  @include mq(tablet) {
+    margin-top: 98px;
+  }
+
+  @include mq(phone) {
+    margin-bottom: 120px;
+  }
+}

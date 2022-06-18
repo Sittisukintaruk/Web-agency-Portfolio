@@ -1,0 +1,176 @@
+@use "../abstracts/" as *;
+
+.projects {
+  .container {
+    @extend %container--title;
+    display: flex;
+    flex-direction: column;
+    &__main {
+      @extend %container--main;
+      order: 1;
+    }
+
+    &__cta {
+      @extend %container--cta;
+      order: 3;
+      .button-primary {
+        padding: 1rem 4rem;
+      }
+
+      .button-borderless {
+        display: none;
+      }
+
+      @include mq(tablet) {
+        order: 2;
+        .button-primary {
+          padding: 1rem 0.5rem;
+        }
+        .button-borderless {
+          display: block;
+        }
+      }
+    }
+
+    &__ratings {
+      @include grid(4);
+      margin-top: 31px;
+      gap: 35px;
+      place-items: center;
+      order: 2;
+
+      .rate {
+        display: flex;
+        flex-direction: column;
+      }
+
+      @include mq(tablet) {
+        @include grid(2);
+        place-items: unset;
+        gap: 58px;
+        padding-inline: 26px;
+        order: 3;
+        margin-top: 84px;
+        margin-inline: auto;
+      }
+    }
+  }
+}
+
+.projects__works {
+  @extend %section;
+  min-height: 100vh;
+
+  .container {
+    @extend %container;
+    @include mq(desktop) {
+      padding-inline: 1rem;
+    }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .bottom--mt {
+      margin-top: 88px;
+    }
+  }
+
+  .card__work {
+    &:nth-of-type(2) {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      .button-secondary {
+        margin-right: 50px;
+      }
+      .project {
+        justify-content: space-between;
+        &__main {
+          @extend %project--main;
+          flex: 1;
+          padding-right: 3rem;
+          order: 2;
+          margin-left: 61px;
+        }
+
+        &__img {
+          margin-left: 0;
+          order: 1;
+        }
+      }
+
+      @include mq(desktop) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .project {
+          justify-content: space-between;
+          &__main {
+            order: 1;
+            margin-left: 0;
+            padding-inline: 0;
+            padding-right: 0;
+          }
+
+          &__img {
+            margin-left: 0;
+            order: 2;
+          }
+        }
+
+        .button-secondary {
+          margin-right: 0;
+        }
+      }
+    }
+    &:not(:first-child) {
+      margin-top: 88px;
+    }
+    @include mq(desktop) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .button-secondary {
+        margin-top: 48px;
+      }
+
+      &:not(:first-child) {
+        margin-top: 80px;
+      }
+    }
+  }
+  .project {
+    display: flex;
+    align-items: center;
+
+    &__main {
+      @extend %project--main;
+      flex: 1;
+      padding-right: 3rem;
+      order: 1;
+    }
+
+    &__img {
+      margin-left: 30px;
+      order: 2;
+    }
+
+    .button-secondary {
+      margin-top: 28px;
+    }
+
+    @include mq(desktop) {
+      flex-direction: column;
+      &__main {
+        padding-inline: 0;
+        padding-right: 1rem;
+      }
+      &__img {
+        margin-left: 0;
+        margin-top: 48px;
+        order: 2;
+      }
+    }
+  }
+}

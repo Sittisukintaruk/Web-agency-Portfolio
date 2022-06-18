@@ -1,0 +1,62 @@
+@use "../abstracts/" as *;
+@use "sass:color";
+
+.button-primary {
+  @extend %button;
+  background-color: $blue-primary;
+  color: $while;
+  @include hover-button($blue-primary-shade);
+}
+
+.bt--center {
+  margin-inline: auto;
+}
+
+.button-secondary {
+  @extend %button;
+  background-color: transparent;
+  border: 2px solid $blue-primary;
+  color: $blue-primary;
+  @include svg-move;
+}
+
+.button-borderless {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  border: none;
+  cursor: pointer;
+  @include svg-move($blue-primary);
+  svg {
+    transition: transform 100ms ease-in;
+  }
+
+  &.ml {
+    margin-left: 43px;
+  }
+}
+
+.button-border--rounde {
+  border-radius: 50%;
+  background-color: $while;
+  border-color: $blue-primary;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  padding: 0.75rem;
+  outline: none;
+  line-height: 1;
+  box-shadow: none;
+
+  &:hover,
+  &:focus {
+    transform: scale(0.99);
+    background-color: color.adjust($while, $lightness: -3);
+  }
+
+  &:active {
+    transform: scale(0.95);
+    background-color: color.adjust(#ffffff, $lightness: -5);
+  }
+}

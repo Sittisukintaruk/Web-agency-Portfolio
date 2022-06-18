@@ -1,0 +1,229 @@
+@use "../abstracts" as *;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+a {
+  font-weight: inherit;
+  font-size: inherit;
+  line-height: 1.5rem;
+
+  &.logo {
+    font-weight: 600;
+    font-size: 2rem;
+    line-height: 48px;
+    color: $blue-primary;
+  }
+
+  &.cta--bigger {
+    font-size: 1.375rem;
+    font-weight: 500;
+    line-height: 33px;
+  }
+
+  &.img--hover {
+    &:hover,
+    &:focus {
+      img {
+        opacity: 0.9;
+      }
+    }
+  }
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &.hightlight {
+    color: $blue-primary;
+  }
+}
+
+h1,
+.h1 {
+  font-weight: 700;
+  font-size: 3rem;
+  line-height: 82px;
+
+  @include mq(phone) {
+    font-size: 2.5rem;
+    line-height: 64px;
+  }
+}
+
+h2,
+.h2 {
+  font-weight: 700;
+  font-size: 2.125rem;
+  line-height: 51px;
+  color: $gray-black;
+  @include mq(phone) {
+    font-size: 22px;
+    line-height: 33px;
+  }
+
+  &.title {
+    font-size: 2.5rem;
+    line-height: 64px;
+  }
+
+  &.card__services_subtitle {
+    font-size: 34px;
+    line-height: 56px;
+  }
+
+  &.title--work {
+    font-size: 2.5rem;
+    line-height: 64px;
+    @include mq(tablet) {
+      font-size: 22px;
+      line-height: 32px;
+    }
+  }
+}
+
+h3,
+.h3 {
+  font-size: 1.375rem;
+  line-height: 171.5%;
+  font-weight: 700;
+
+  &.card__title {
+    font-size: 1.375rem;
+  }
+
+  @include mq(phone) {
+    font-size: 1rem;
+  }
+
+  @include mq(tablet) {
+    &.team__title {
+      font-size: 18px;
+      font-weight: 700;
+    }
+  }
+
+  &.card__process {
+    font-weight: 600;
+  }
+
+  &.card__services {
+    font-weight: 600;
+  }
+
+  &.headline--work {
+    font-size: 1.375rem;
+    line-height: 171.5%;
+    font-weight: 700;
+    @include mq(tablet) {
+      font-size: 1rem;
+      line-height: 24px;
+    }
+  }
+}
+
+h4,
+.h4 {
+  color: $gray;
+  font-weight: 400;
+  font-size: 1.125rem;
+  line-height: 27px;
+
+  @include mq(tablet) {
+    font-size: 1rem;
+  }
+}
+
+h5,
+.h5 {
+  font-size: 1rem;
+  line-height: 21px;
+  font-weight: 400;
+  color: $gray;
+
+  @include mq(phone) {
+    font-size: 1rem;
+  }
+
+  &.rate__headline {
+    font-weight: 600;
+    color: $blue-primary;
+  }
+}
+
+h6,
+.h6 {
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: 400;
+  color: $gray;
+}
+
+p {
+  color: $gray;
+  font-weight: 400;
+  font-size: 1.375rem;
+  line-height: 171.5%;
+
+  &.card__paragraph {
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 24px;
+    margin-top: 10px;
+  }
+
+  @include mq(tablet) {
+    font-size: 1.125rem;
+
+    &.card__paragraph {
+      font-size: 14px;
+    }
+
+    &.process__paragraph {
+      font-size: 1.375rem;
+    }
+  }
+  &.detaile__paragraph {
+    font-size: 1rem;
+    line-height: 171.5%;
+    color: rgba(14, 14, 44, 0.6);
+    font-weight: 400;
+  }
+
+  &.textmonail__paragraph {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 171.5%;
+  }
+}
+
+span {
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 24px;
+
+  &.number__process {
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 171.5%;
+    color: $blue-primary;
+  }
+
+  &.rate__count {
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 171.5%;
+    color: $gray-black;
+    margin-top: 10px;
+  }
+
+  &.input__title {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21px;
+    /* text/Black/100 */
+
+    color: #0e0e2c;
+  }
+}

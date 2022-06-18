@@ -1,0 +1,29 @@
+@use "./variables" as *;
+
+@mixin hover-button($background-color, $text-color: "#ffffff") {
+  &:hover {
+    background-color: $background-color;
+    color: $text-color;
+  }
+}
+
+@mixin svg-move($textcolor: "") {
+  svg {
+    transition: transform 100ms ease-in;
+  }
+
+  &:hover {
+    color: $textcolor;
+    svg {
+      transform: translateX(4px);
+    }
+  }
+}
+
+@mixin mq($key) {
+  $size: map-get($breakpoints, $key);
+
+  @media only screen and (max-width: $size) {
+    @content;
+  }
+}

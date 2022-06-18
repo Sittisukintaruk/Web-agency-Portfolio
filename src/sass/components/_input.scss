@@ -1,0 +1,41 @@
+@use "../abstracts/" as *;
+
+.input {
+  padding: 8px 16px;
+  background: #ffffff;
+  /* Gry/normal */
+  border: 1px solid #767676;
+  border-radius: 4px;
+  font-size: 14px;
+  line-height: 21px;
+}
+
+.input_textarea {
+  padding: 24px;
+  background: #ffffff;
+  /* Gry/normal */
+  border: 1px solid #767676;
+  border-radius: 4px;
+  font-size: 14px;
+  line-height: 21px;
+
+  @include mq(tablet) {
+      
+  }
+}
+
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #b1b1b1;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #b1b1b1;
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #b1b1b1;
+}

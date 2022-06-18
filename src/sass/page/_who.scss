@@ -1,0 +1,70 @@
+@use "../abstracts/" as *;
+
+//Secttion About
+.who_about {
+  .container {
+    @extend %container--title;
+
+    &__main {
+      @extend %container--main;
+    }
+
+    &_cta {
+      @extend %container--cta;
+    }
+  }
+}
+
+//Secttion Team
+.who_team {
+  @extend %section;
+  margin-top: 180px;
+  .container {
+    @extend %container;
+    display: flex;
+
+    &__main {
+      flex: 1;
+    }
+
+    &__team {
+      flex: 2;
+      display: grid;
+      @include grid(4);
+      gap: 30px;
+      padding-top: 1rem;
+
+      img {
+        height: 235px;
+        object-fit: cover;
+      }
+
+      @include mq(desktop) {
+        flex: 1;
+        @include grid(2);
+      }
+
+      @include mq(tablet) {
+        img {
+          height: auto;
+        }
+      }
+      @include mq(phone) {
+        @include grid(1);
+      }
+
+      .whocard-team {
+        display: flex;
+        flex-direction: column;
+        margin-top: 73px;
+      }
+    }
+
+    @include mq(desktop) {
+      padding-inline: 1rem;
+    }
+    @include mq(tablet) {
+      flex-direction: column;
+    }
+  }
+}

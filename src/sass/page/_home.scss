@@ -1,0 +1,350 @@
+@use "../abstracts/" as *;
+
+//hero sections
+.hero {
+  background-color: transparent;
+
+  &__container {
+    @extend %container;
+    display: flex;
+  }
+
+  &__main {
+    flex: 1;
+    position: relative;
+    z-index: 1;
+    .cta {
+      margin-top: 54px;
+      display: flex;
+      overflow: hidden;
+    }
+
+    @include mq(desktop) {
+      padding-left: 1rem;
+      padding-right: 1rem;
+      .cta--bigger {
+        margin-left: 0.5rem;
+      }
+    }
+
+    @include mq(phone) {
+      .cta {
+        margin-top: 24px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        a {
+          width: 100%;
+          margin-left: 0;
+          justify-content: center;
+        }
+      }
+    }
+  }
+  &__arrowleft {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(-98px, 17px);
+    height: 396px;
+  }
+
+  &__img {
+    flex: 1;
+    .img {
+      position: relative;
+      z-index: 50;
+
+      &__backstar {
+        position: absolute;
+        top: 0px;
+        left: 0;
+        z-index: -1;
+        transform: translateY(-40px);
+      }
+
+      &__Titik {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        transform: translate(143px, 66px);
+        z-index: -1;
+
+        @include mq(desktop) {
+          transform: scale(0.9) translate(8px, 65px);
+        }
+      }
+
+      &__work {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        border-radius: 12px;
+        background-color: $while;
+        padding: 1rem 1.5rem;
+        filter: drop-shadow(0px 40px 30px rgba(25, 25, 46, 0.04));
+        z-index: 99;
+
+        &--topleft {
+          top: 0;
+          left: 0;
+          transform: translate(-40px, 87px);
+
+          @include mq(desktop) {
+            transform: translate(-35px, calc(100% - 21px));
+          }
+        }
+
+        &--bottomleft {
+          bottom: 0;
+          left: 0;
+          transform: translate(-40px, -128px);
+        }
+
+        &--topright {
+          top: 0;
+          right: 0;
+          transform: translate(46px, 243px);
+
+          @include mq(desktop) {
+            transform: translate(-4px, 223px);
+          }
+        }
+
+        &--bottomright {
+          bottom: 0;
+          right: 0;
+          transform: translate(-63px, -50px);
+        }
+      }
+    }
+
+    @include mq(desktop) {
+      flex: 0.7;
+    }
+    @include mq(tablet) {
+      display: none;
+    }
+  }
+}
+
+//Cliebt sections
+.client {
+  @extend %section;
+
+  &__container {
+    @extend %container;
+    padding-inline: 1rem;
+  }
+
+  &__title {
+    font-size: 1.5rem;
+  }
+
+  &__groupe {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-shrink: 0;
+    gap: 16px;
+    margin-top: 48px;
+    @include mq(phone) {
+      margin-top: 32px;
+      justify-content: space-around;
+    }
+  }
+}
+
+//services sections
+.services {
+  @extend %section;
+
+  &__container {
+    @extend %container;
+
+    @include mq(desktop) {
+      padding-inline: 1rem;
+    }
+
+    .grid {
+      @include grid(4, 2);
+      gap: 39px;
+      grid-gap: 39px;
+
+      @include mq(tablet) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      @include mq(phone) {
+        @include grid(1);
+        h2 {
+          grid-column: span 1;
+        }
+      }
+    }
+  }
+  &__cards {
+    h2 {
+      grid-column: span 2;
+    }
+  }
+  &__card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__card:nth-of-type(n + 3) {
+    margin-top: 75px;
+
+    @include mq(tablet) {
+      margin-top: 0;
+    }
+  }
+}
+
+//Team sections
+.team {
+  @extend %section;
+  @include grid(12);
+  gap: 30px;
+  @extend %container;
+
+  .container {
+    grid-column: span 6;
+    @include mq(desktop) {
+      padding-inline: 1rem;
+    }
+
+    @include mq(tablet) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    &__main {
+      grid-column: span 6;
+
+      @include mq(tablet) {
+        grid-column: span 7;
+      }
+    }
+
+    &__img {
+      grid-column-start: 8;
+      grid-column-end: 12;
+      position: relative;
+      max-width: 100%;
+      z-index: 5;
+      .groupe-button--img {
+        display: flex;
+        justify-content: flex-end;
+        position: absolute;
+        margin-top: 2rem;
+        right: 0;
+        bottom: 0;
+        transform: translate(0, 50px);
+        .button-border--rounde:nth-of-type(2) {
+          margin-left: 48px;
+        }
+
+        @include mq(tablet) {
+          justify-content: center;
+          margin-top: 25px;
+        }
+
+        @include mq(phone) {
+          justify-content: center;
+          margin-top: 40px;
+          left: 50%;
+          right: 50%;
+          transform: translate(0, 70px);
+          bottom: 0;
+        }
+      }
+
+      .backimage {
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translate(94px, -27px);
+        z-index: -1;
+        @include mq(tablet) {
+          display: none;
+        }
+      }
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  @include mq(tablet) {
+    @include grid(12);
+    .container {
+      grid-column: span 12;
+    }
+    .container__img {
+      grid-column-start: 2;
+      grid-column-end: 12;
+    }
+  }
+}
+
+.works {
+  @extend %section;
+
+  .container {
+    @extend %container;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    &__title {
+      display: flex;
+      flex-direction: column;
+    }
+
+    @include mq(desktop) {
+      padding-inline: 1rem;
+    }
+  }
+
+  &_cards {
+    margin-top: 68px;
+    @include grid(3, 2);
+    gap: 30px;
+    grid-gap: 30px;
+
+    .grid--span {
+      grid-row: span 2;
+    }
+
+    @include mq(tablet) {
+      @include grid(2);
+
+      .grid--span {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+
+    @include mq(phone) {
+      @include grid(1);
+
+      .grid--span {
+        a {
+          &.fixed-height {
+            height: 259px;
+            overflow: hidden;
+          }
+        }
+      }
+    }
+  }
+
+  a.button-secondary {
+    margin-top: 68px;
+  }
+}

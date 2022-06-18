@@ -1,0 +1,44 @@
+@use "../abstracts" as *;
+
+:root {
+  //margin
+  @each $margin, $value in $margin {
+    .mt-#{$margin} {
+      margin-top: $value;
+    }
+    .mb-#{$margin} {
+      margin-bottom: $value;
+    }
+
+    .ml-#{$margin} {
+      margin-left: $value;
+    }
+
+    .pt-#{$margin} {
+      padding-top: $value;
+    }
+  }
+
+  .text-blue {
+    color: $blue-primary;
+  }
+
+  .text-black {
+    color: #0e0e2c;
+  }
+
+  .medium {
+    font-weight: 500;
+  }
+
+  .bold {
+    font-weight: 700;
+  }
+  .semi-bold {
+    font-weight: 600;
+  }
+
+  .center {
+    margin: 0 auto;
+  }
+}

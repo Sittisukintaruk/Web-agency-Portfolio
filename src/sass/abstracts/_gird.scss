@@ -1,0 +1,7 @@
+@mixin grid($colurm: 0, $row: 0) {
+  display: grid;
+  grid-template-columns: repeat($colurm, 1fr);
+  @if $row > 0 {
+    grid-template-rows: repeat($row, auto);
+  }
+}

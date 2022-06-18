@@ -1,0 +1,75 @@
+@use "../abstracts/" as *;
+
+.testmonail {
+  background-color: $gray-background;
+  padding-bottom: 70px;
+  margin-top: 180px;
+  overflow: hidden;
+  .container {
+    @extend %container;
+    padding-top: 59px;
+    padding-bottom: 70px;
+
+    &__cards {
+      margin-top: 66px;
+      display: flex;
+    }
+    &__buttons {
+      display: flex;
+      align-content: center;
+      justify-content: center;
+    }
+    @include mq(tablet) {
+      &__cards {
+        margin-top: 55px;
+      }
+    }
+  }
+
+  .card {
+    display: flex;
+    min-height: 248px;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 3rem;
+    &:nth-of-type(2) {
+      margin-left: 30px;
+    }
+
+    &__client {
+      display: flex;
+      align-items: center;
+    }
+
+    &__photo {
+      width: 68px;
+      height: 68px;
+      border-radius: 50%;
+      overflow: hidden;
+      background: rgba(64, 68, 77, 0.71);
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      img {
+        object-fit: cover;
+        width: 100%;
+        aspect-ratio: 1/1;
+      }
+    }
+  }
+
+  @include mq(desktop) {
+    padding-inline: 1rem;
+  }
+
+  @include mq(tablet) {
+    .card {
+      padding: 2rem;
+      &:nth-of-type(2) {
+        display: none;
+      }
+    }
+  }
+
+  @include mq(phone) {
+    margin-top: 120px;
+  }
+}

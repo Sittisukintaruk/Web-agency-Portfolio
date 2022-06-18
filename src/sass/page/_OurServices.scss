@@ -1,0 +1,99 @@
+@use "../abstracts/" as *;
+
+.offres {
+  .container {
+    @extend %container--title;
+
+    &__main {
+      @extend %container--main;
+    }
+
+    &__cta {
+      @extend %container--cta;
+    }
+  }
+}
+
+.process {
+  @extend %section;
+
+  .container {
+    @extend %container;
+
+    &__main {
+      display: flex;
+      align-items: center;
+
+      .headline {
+        display: flex;
+        align-items: baseline;
+        margin-top: 1rem;
+      }
+
+      @include mq(tablet) {
+        padding-inline: 1rem;
+        .headline {
+          flex-direction: column;
+          padding-right: 2rem;
+          text-align: left;
+          p {
+            margin-top: 40px;
+          }
+        }
+      }
+    }
+
+    &__process {
+      margin-top: 190px;
+      @include grid(4);
+      gap: 30px;
+
+      @include mq(desktop) {
+        margin-top: 60px;
+        @include grid(2);
+        grid-auto-rows: minmax(min-content, max-content);
+      }
+
+      @include mq(phone) {
+        @include grid(1);
+      }
+    }
+
+    @include mq(desktop) {
+      padding-inline: 1rem;
+    }
+  }
+
+  .card {
+    position: relative;
+    &__title {
+      display: flex;
+      align-items: center;
+
+      .card__process {
+        margin-left: 1rem;
+      }
+    }
+
+    &__arrow--bottom {
+      position: absolute;
+      bottom: -50%;
+      left: 50%;
+      transform: translate(0, 50%) scale(1.1) !important;
+
+      @include mq(desktop) {
+        display: none;
+      }
+    }
+
+    &__arrow--top {
+      position: absolute;
+      top: -50%;
+      left: 50%;
+      transform: translate(-15%, -50%) rotateX(190deg) scale(1.1) !important;
+      @include mq(desktop) {
+        display: none;
+      }
+    }
+  }
+}
